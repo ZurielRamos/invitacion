@@ -12,11 +12,10 @@ const fadeUp = (delay, active) => ({
 })
 
 const itemVariants = {
-  hide: { opacity: 0, y: 16, filter: 'blur(8px)' },
+  hide: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
     transition: { duration: 0.45, ease: 'easeOut' },
   },
 }
@@ -42,7 +41,7 @@ function Reveal({ text, by = 'word', stagger = 0.06, delay = 0, show = true, as 
           <motion.span
             aria-hidden="true"
             variants={itemVariants}
-            style={{ display: 'inline-block', whiteSpace: 'pre' }}
+            style={{ display: 'inline-block', whiteSpace: 'pre', willChange: 'transform, opacity' }}
           >
             {part}
           </motion.span>
