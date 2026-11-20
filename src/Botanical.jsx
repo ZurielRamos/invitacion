@@ -203,7 +203,7 @@ const corners = [
   { cls: 'br', flipX: true, flipY: true },
 ]
 
-export default function Botanical() {
+export default function Botanical({ active = true }) {
   const still = useReducedMotion()
   return (
     <>
@@ -213,11 +213,33 @@ export default function Botanical() {
         <motion.div
           key={cls}
           className={`corner ${cls}`}
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, delay: i * 0.2 }}
+          initial={false}
+          animate={active ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.92 }}
+          transition={{ duration: 0.8, delay: active ? 0.05 + i * 0.08 : 0 }}
         >
           <Cluster flipX={flipX} flipY={flipY} still={still} />
+        </motion.div>
+      ))}
+    </>
+  )
+}
+
+export function CoverLeaves() {
+  const still = useReducedMotion()
+  return (
+    <>
+      {[
+        { cls: 'l', flipX: false },
+        { cls: 'r', flipX: true },
+      ].map(({ cls, flipX }, i) => (
+        <motion.div
+          key={cls}
+          className={`cover-leaf ${cls}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.6, delay: 0.2 + i * 0.2 }}
+        >
+          <Cluster flipX={flipX} flipY={false} still={still} />
         </motion.div>
       ))}
     </>

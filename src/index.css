@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&family=Great+Vibes&family=Mea+Culpa&display=swap');
 
 :root {
   --sans: 'Jost', system-ui, sans-serif;
   --serif: 'Cormorant Garamond', Georgia, serif;
+  --names: 'Mea Culpa', 'Great Vibes', cursive;
   --script: 'Great Vibes', cursive;
   --bg: #eef0e8;
   --text: #5b5f56;
