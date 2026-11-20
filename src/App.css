@@ -82,6 +82,17 @@
 .n1 { align-self: flex-start; margin-left: 14%; }
 .n2 { align-self: flex-end; margin-right: 8%; margin-top: -0.4rem; }
 
+.amp {
+  position: absolute;
+  right: 12%;
+  top: 1.2rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(3.4rem, 17vw, 5rem);
+  line-height: 1;
+  color: #4d5230;
+}
+
 .rings {
   position: absolute;
   left: 12%;
@@ -211,6 +222,13 @@
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 1.15;
+}
+
+.names .amp-inline {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.15em;
+  margin: 0 0.1em;
 }
 
 .date {

@@ -41,6 +41,7 @@ function Reveal({ text, by = 'word', stagger = 0.06, delay = 0, show = true, as 
           <motion.span
             aria-hidden="true"
             variants={itemVariants}
+            className={part === '&' ? 'amp-inline' : undefined}
             style={{ display: 'inline-block', whiteSpace: 'pre', willChange: 'transform, opacity' }}
           >
             {part}
@@ -86,6 +87,7 @@ function Cover({ onNext, progress }) {
           <CoverLeaves />
           <h1 className="cover-names">
             <Reveal className="name n1" text={wedding.novia} by="char" stagger={0.07} delay={0.2} />
+            <Reveal className="amp" text="&" by="char" delay={0.55} />
             <Reveal className="name n2" text={wedding.novio} by="char" stagger={0.07} delay={0.7} />
             <Rings />
           </h1>
